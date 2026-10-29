@@ -1,0 +1,16 @@
+# ARCHIVOS COMPILADOS Y DE DEPURACION
+Programs/*.exe
+Programs/*.dbg
+Programs/*.pkh
+Programs/*.err
+Programs/*.log
+
+# ARCHIVOS TEMPORALES
+*.bak
+*.~*
+*.tmp
+*.prn
+Data/*.cch
+
+# CONFIGURACION LOCAL
+IdeSrc/
