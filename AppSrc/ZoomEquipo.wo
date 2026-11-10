@@ -42,6 +42,20 @@ Object oZoomEquipo is a cWebView
             Set peLabelPosition to lpTop
             Set psLabel to "Nombre"
         End_Object 
+        
+         Object oligaNombre is a cWebForm
+            Entry_Item liga.Nombre
+            Set piColumnSpan to 12
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "Liga"
+            Set pbPromptButton to True
+            
+            WebRegisterPath ntNavigateForward oSelectLiga
+            Procedure OnPrompt
+                Send NavigatePath
+            End_Procedure
+        End_Object
     End_Object 
 
     Object oActionGroup is a cWebMenuGroup
