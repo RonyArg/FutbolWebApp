@@ -12,6 +12,8 @@ Use cligaDataDictionary.dd
 Use cequipoDataDictionary.dd
 Use cjugadorDataDictionary.dd
 
+Use SelectPosicion.wo
+
 Object oZoomJugador is a cWebView
     Set piColumnCount to 12
     Set psCaption to "ZoomJugador"
@@ -62,6 +64,23 @@ Object oZoomJugador is a cWebView
             Set piColumnIndex to 0
             Set peLabelPosition to lpTop
             Set psLabel to "Nacionalidad"
+        End_Object  
+        
+        Object oBtnVerPosiciones is a cWebButton
+            Set psCaption to "Ver Posiciones"
+            Set piColumnSpan to 12
+            Set pbServerOnClick to True
+            
+            WebRegisterPath ntNavigateForward oSelectPosicion
+            
+            Procedure OnClick
+                Send NavigatePath
+            End_Procedure
+            
+            Procedure OnGetNavigateForwardData tWebNavigateData ByRef NavigateData Handle hoToView
+                Forward Send OnGetNavigateForwardData (&NavigateData) hoToView
+                Move nfUndefined to NavigateData.eNavigateType
+            End_Procedure
         End_Object
         
         Object oequipoNombre is a cWebForm
