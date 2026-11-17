@@ -38,6 +38,7 @@ Object oWebApp is a cWebApp
             
             Object oMenuButton is a cWebMenuButton
                 Set piMenuHeight to 500
+                Set piColumnIndex to 0
 
                 Object oDashboard_itm is a cWebMenuItem
                     Set psCaption to C_$Dashboard
