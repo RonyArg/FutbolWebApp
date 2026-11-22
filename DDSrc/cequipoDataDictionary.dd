@@ -15,6 +15,10 @@ Class cequipoDataDictionary is a DataDictionary
 
         Set Add_Client_File to entrenador.File_Number
         Set Add_Client_File to jugador.File_Number
+        
+        Set Key_Field_State to entrenador.ID Toggle_State True
+        Set Field_Option Field equipo.Nombre DD_DISPLAYONLY to True
+        Set Field_Option Field equipo.Nombre DD_REQUIRED to True
 
         Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
         Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True

@@ -11,6 +11,11 @@ Class cposicionDataDictionary is a DataDictionary
 
         Set Add_Client_File to jugadorposicion.File_Number
 
+        Set Key_Field_State Field posicion.ID to True
+        Set Field_Option Field posicion.Nombre DD_DisplayOnly to True
+        Set Field_Option Field posicion.Nombre DD_Required to True
+
+
         Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
         Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
         Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True

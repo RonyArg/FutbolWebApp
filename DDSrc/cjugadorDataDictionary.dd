@@ -13,7 +13,13 @@ Class cjugadorDataDictionary is a DataDictionary
         Set Add_Server_File to equipo.File_Number
 
         Set Add_Client_File to jugadorposicion.File_Number
-
+            
+        Set Key_Field_State Field jugador.ID to True
+        Set Field_Option Field jugador.Nombre   DD_DisplayOnly to True
+        Set Field_Option Field jugador.Apellido DD_DisplayOnly to True
+        Set Field_Option Field jugador.Nombre   DD_Required to True
+        Set Field_Option Field jugador.Apellido DD_Required to True
+        
         Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
         Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
         Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
