@@ -3,6 +3,9 @@ Use cli.pkg
 
 Open entrenador
 Open equipo
+Object oNacionalidadEntrenadorTable is a CodeValidationTable
+    Set Type_Value to "NACION"
+End_Object
 
 Class centrenadorDataDictionary is a DataDictionary
     
@@ -19,7 +22,8 @@ Class centrenadorDataDictionary is a DataDictionary
         Set Field_Option Field entrenador.Nombre DD_REQUIRED to True
         Set Field_Option Field entrenador.Apellido DD_REQUIRED to True
         
-
+        Set Field_Value_Table Field entrenador.Nacionalidad to oNacionalidadEntrenadorTable
+        
         Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
         Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
         Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True

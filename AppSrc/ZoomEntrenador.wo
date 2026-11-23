@@ -11,6 +11,7 @@ Use cWebForm.pkg
 Use cligaDataDictionary.dd
 Use cequipoDataDictionary.dd
 Use centrenadorDataDictionary.dd
+Use cWebCombo.pkg
 
 Object oZoomEntrenador is a cWebView
     Set piColumnCount to 12
@@ -56,13 +57,13 @@ Object oZoomEntrenador is a cWebView
             Set psLabel to "Apellido"
         End_Object 
 
-        Object oentrenadorNacionalidad is a cWebForm
+        Object oentrenadorNAcionalidad is a cWebCombo
             Entry_Item entrenador.Nacionalidad
             Set piColumnSpan to 12
             Set piColumnIndex to 0
             Set peLabelPosition to lpTop
             Set psLabel to "Nacionalidad"
-        End_Object 
+        End_Object
         
         Object oequipoNombre is a cWebForm
             Entry_Item equipo.Nombre
