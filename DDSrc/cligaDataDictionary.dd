@@ -12,7 +12,7 @@ Class cligaDataDictionary is a DataDictionary
         Set Add_Client_File to equipo.File_Number
         
         Set Key_Field_State Field liga.ID to True
-        Set Field_Option Field liga.Nombre DD_DISPLAYONLY to True
+        Set Field_Option Field liga.Nombre DD_COMMIT to True
         Set Field_Option Field liga.Nombre DD_REQUIRED to True
         Set Field_Option Field liga.Pais DD_REQUIRED to True
 
