@@ -16,6 +16,7 @@ Use cposicionDataDictionary.dd
 Use cjugadorposicionDataDictionary.dd
 Use cWebButton.pkg
 
+
 Object oSelectJugadorPosicion is a cWebView
     Set psCaption to "SelectJugadorPosicion"
     Set peWebViewStyle to wvsDrilldown
@@ -55,7 +56,7 @@ Object oSelectJugadorPosicion is a cWebView
         Object oWebColumn1 is a cWebColumn
             Set psCaption to "Posiciones disponibles"
             Set piWidth to 50
-            Set Entry_Item posicion.Nombre
+            Entry_Item posicion.Nombre
         End_Object
     End_Object
 
@@ -82,7 +83,7 @@ Object oSelectJugadorPosicion is a cWebView
         Object oWebColumn2 is a cWebColumn
             Set psCaption to "Posiciones del Jugador"
             Set piWidth to 50
-            Set Entry_Item posicion.Nombre
+            Entry_Item posicion.Nombre
         End_Object
     End_Object
 
