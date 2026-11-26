@@ -11,6 +11,7 @@ Use cWebForm.pkg
 Use cligaDataDictionary.dd
 Use cequipoDataDictionary.dd
 Use centrenadorDataDictionary.dd
+Use cWebCombo.pkg
 
 Object oZoomEntrenador is a cWebView
     Set piColumnCount to 12
@@ -40,14 +41,6 @@ Object oZoomEntrenador is a cWebView
         Set piColumnCount to 12
         WebSetResponsive piColumnCount rmMobile to 4
 
-        Object oentrenadorID is a cWebForm
-            Entry_Item entrenador.ID
-            Set piColumnSpan to 3
-            Set piColumnIndex to 0
-            Set peLabelPosition to lpTop
-            Set psLabel to "ID"
-        End_Object 
-
         Object oentrenadorNombre is a cWebForm
             Entry_Item entrenador.Nombre
             Set piColumnSpan to 12
@@ -64,29 +57,27 @@ Object oZoomEntrenador is a cWebView
             Set psLabel to "Apellido"
         End_Object 
 
-        Object oentrenadorNacionalidad is a cWebForm
+        Object oentrenadorNAcionalidad is a cWebCombo
             Entry_Item entrenador.Nacionalidad
             Set piColumnSpan to 12
             Set piColumnIndex to 0
             Set peLabelPosition to lpTop
             Set psLabel to "Nacionalidad"
-        End_Object 
-
-        Object oequipoID is a cWebForm
-            Entry_Item equipo.ID
-            Set piColumnSpan to 3
+        End_Object
+        
+        Object oequipoNombre is a cWebForm
+            Entry_Item equipo.Nombre
+            Set piColumnSpan to 12
             Set piColumnIndex to 0
             Set peLabelPosition to lpTop
-            Set psLabel to "EquipoID"
+            Set psLabel to "Equipo"
             Set pbPromptButton to True
-
-// ToDo: Fill in the from-child parent Select view object name for navigate forward
-//            WebRegisterPath ntNavigateForward oSelectView
-
+            
+            WebRegisterPath ntNavigateForward oSelectEquipo 
             Procedure OnPrompt
                 Send NavigatePath
-            End_Procedure
-        End_Object 
+            End_Procedure         
+         End_Object
     End_Object 
 
     Object oActionGroup is a cWebMenuGroup
@@ -119,8 +110,17 @@ Object oZoomEntrenador is a cWebView
             Procedure OnClick
                 Send Request_Delete
             End_Procedure
-
-        End_Object 
+        End_Object
+        
+        Object oDespedirBtn is a cWebMenuItem
+            Set psCaption to "Despedir"
+            Set peActionDisplay to adMenu   
+            
+            Procedure OnClick
+                Send Clear of oequipo_DD
+                Send Request_Save
+            End_Procedure
+        End_Object
 
         Object oCancelChangesBtn is a cWebMenuItem
             Set psCSSClass to "WebIcon_Refresh"
@@ -147,6 +147,7 @@ Object oZoomEntrenador is a cWebView
         WebSet pbRender of oSaveBtn to False
         WebSet pbRender of oCancelChangesBtn to False
         WebSet pbRender of oDeleteBtn to False
+        WebSet pbRender of oDespedirBtn to False
 
         If (NavigateData.bReadOnly) Begin
             WebSet pbRender of oEditBtn to True
@@ -155,6 +156,7 @@ Object oZoomEntrenador is a cWebView
             WebSet pbRender of oSaveBtn to True
             WebSet pbRender of oCancelChangesBtn to True
             WebSet pbRender of oDeleteBtn to bHasRecord
+            WebSet pbRender of oDespedirBtn to bHasRecord
         End
     End_Procedure
 

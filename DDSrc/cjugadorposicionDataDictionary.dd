@@ -12,6 +12,8 @@ Class cjugadorposicionDataDictionary is a DataDictionary
 
         Set Add_Server_File to jugador.File_Number
         Set Add_Server_File to posicion.File_Number
+        
+        Set Key_Field_State Field jugadorposicion.ID to True
 
         Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
         Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
