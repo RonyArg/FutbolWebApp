@@ -120,9 +120,9 @@ Object oZoomJugador is a cWebView
             WebRegisterPath ntNavigateForward oSelectJugadorPosicion
 
             Procedure OnClick
-                Send NavigateForward of oSelectJugadorPosicion Self
-            End_Procedure
-       End_Object
+                 Send NavigatePath
+             End_Procedure
+        End_Object
 
         Object oListaPosicionesJugador is a cWebList
             Set Server to ojugadorposicion_DD
@@ -218,6 +218,7 @@ Object oZoomJugador is a cWebView
     End_Procedure
 
     Procedure OnNavigateForward tWebNavigateData NavigateData Integer hoInvokingView Integer hoInvokingObject
+        Forward Send OnNavigateForward NavigateData hoInvokingView hoInvokingObject
         Case Begin
             Case (NavigateData.eNavigateType = nfFromMain)
                 // If from main, this is a propbably a main file Select to Zoom.
@@ -236,6 +237,7 @@ Object oZoomJugador is a cWebView
         Case End
 
         Send SetActionButtons
+        Send GridRefresh of oListaPosicionesJugador
 
     End_Procedure
 
