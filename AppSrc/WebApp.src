@@ -1,5 +1,6 @@
 ﻿Use AllWebAppClasses.pkg
 Use cConnection.pkg
+Use cWebMenuItem.pkg
 
 Object oApplication is a cApplication
     Object oConnection is a cConnection
@@ -48,10 +49,6 @@ Object oWebApp is a cWebApp
                     Procedure OnClick
                         Send NavigatePath
                     End_Procedure
-                End_Object
-
-                Object oViewMenu is a cWebMenuItem
-                    Set psCaption to C_$View
                 End_Object
 
                 Object oSignOut_itm is a cWebMenuItem
@@ -138,6 +135,7 @@ Object oWebApp is a cWebApp
     Use SelectLiga.wo
     Use SelectPosicion.wo
     Use Dashboard.wo
+    Use SelectJugadorPosicion.wo
     
     Set phoDefaultView to oDashboard
 
